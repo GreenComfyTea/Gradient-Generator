@@ -1,7 +1,5 @@
 <h1>Gradient Generator</h1>
 
-<img src="https://i.imgur.com/kKxBJwR.png" />
-
 # Prerequisites
 - .Net 5
 
