@@ -2,8 +2,8 @@
 {
 	public class Constants
 	{
-		public static int DEFAULT_WIDTH = 1280;
-		public static int DEFAULT_HEIGHT = 720;
+		public static int DEFAULT_WIDTH = 1920;
+		public static int DEFAULT_HEIGHT = 1080;
 		public static int DEFAULT_SEED = 0;
 		public static int DEFAULT_MIN_RANDOM = -1000;
 		public static int DEFAULT_MAX_RANDOM = 1000;

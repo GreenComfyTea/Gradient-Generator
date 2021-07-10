@@ -91,50 +91,47 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Image Width:" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
-                    <TextBlock Text="Image Height:" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
-					<TextBlock Text="Seed (0 is random):" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
-                    <TextBlock Text="Min Random:" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
-                    <TextBlock Text="Max Random:" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
-                    <TextBlock Text="Zero Max Random:" Grid.Row="20" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
-                    <TextBlock Text="Min Offset X:" Grid.Row="24" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
-                    <TextBlock Text="Max Offset X:" Grid.Row="28" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
-                    <TextBlock Text="Min Offset Y:" Grid.Row="32" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
-                    <TextBlock Text="Max Offset Y:" Grid.Row="36" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
+                    <TextBlock Text="Image Height:" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
+					<TextBlock Text="Seed (0 is random):" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
+                    <TextBlock Text="Min Random:" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
+                    <TextBlock Text="Max Random:" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
+                    <TextBlock Text="Zero Max Random:" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
+                    <TextBlock Text="Min Offset X:" Grid.Row="20" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
+                    <TextBlock Text="Max Offset X:" Grid.Row="24" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
+                    <TextBlock Text="Min Offset Y:" Grid.Row="28" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
+                    <TextBlock Text="Max Offset Y:" Grid.Row="32" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
 
-                    <Slider x:Name="widthSlider" Grid.Row="2" Grid.Column="0" Value="1920" Minimum="0" Maximum="4096" IsSnapToTickEnabled="true" ValueChanged="Width_Changed" />
-                    <TextBox x:Name="widthTextBox" Grid.Row="2" Grid.Column="2" Text="1920" IsEnabled="False" Focusable="False" />
+					<TextBox x:Name="widthTextBox" Grid.Row="0" Grid.Column="2" Text="1920" IsEnabled="True" PreviewTextInput="Width_Changed" />
+					<TextBox x:Name="heightTextBox" Grid.Row="2" Grid.Column="2" Text="1080" IsEnabled="True" PreviewTextInput="Height_Changed" />
 
-                    <Slider x:Name="heightSlider" Grid.Row="6" Grid.Column="0" Value="1080" Minimum="0" Maximum="4096" IsSnapToTickEnabled="true" ValueChanged="Height_Changed" />
-                    <TextBox x:Name="heightTextBox" Grid.Row="6" Grid.Column="2" Text="1080" IsEnabled="False" Focusable="False" />
+					<Slider x:Name="seedSlider" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Value="0" Minimum="0" Maximum="100000" IsSnapToTickEnabled="true" ValueChanged="Seed_Changed" />
+					<TextBox x:Name="seedTextBox" Grid.Row="4" Grid.Column="2" Text="0" IsEnabled="False" Focusable="False" />
 
-					<Slider x:Name="seedSlider" Grid.Row="10" Grid.Column="0" Value="0" Minimum="0" Maximum="100" IsSnapToTickEnabled="true" ValueChanged="Seed_Changed" />
-					<TextBox x:Name="seedTextBox" Grid.Row="10" Grid.Column="2" Text="0" IsEnabled="False" Focusable="False" />
+					<Slider x:Name="minRandomSlider" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3" Value="-1000" Minimum="-10000" Maximum="10000" IsSnapToTickEnabled="true" ValueChanged="MinRandom_Changed" />
+                    <TextBox x:Name="minRandomTextBox" Grid.Row="8" Grid.Column="2" Text="-1000" IsEnabled="False" Focusable="False" />
 
-					<Slider x:Name="minRandomSlider" Grid.Row="14" Grid.Column="0" Value="-1000" Minimum="-10000" Maximum="10000" IsSnapToTickEnabled="true" ValueChanged="MinRandom_Changed" />
-                    <TextBox x:Name="minRandomTextBox" Grid.Row="14" Grid.Column="2" Text="-1000" IsEnabled="False" Focusable="False" />
+					<Slider x:Name="maxRandomSlider" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="3" Value="1000" Minimum="-10000" Maximum="10000" IsSnapToTickEnabled="true" ValueChanged="MaxRandom_Changed" />
+                    <TextBox x:Name="maxRandomTextBox" Grid.Row="12" Grid.Column="2" Text="1000" IsEnabled="False" Focusable="False" />
 
-                    <Slider x:Name="maxRandomSlider" Grid.Row="18" Grid.Column="0" Value="1000" Minimum="-10000" Maximum="10000" IsSnapToTickEnabled="true" ValueChanged="MaxRandom_Changed" />
-                    <TextBox x:Name="maxRandomTextBox" Grid.Row="18" Grid.Column="2" Text="1000" IsEnabled="False" Focusable="False" />
+					<Slider x:Name="zeroMaxRandomSlider" Grid.Row="18" Grid.Column="0" Grid.ColumnSpan="3" Value="16777215" Minimum="0" Maximum="16777215" IsSnapToTickEnabled="true" ValueChanged="ZeroMaxRandom_Changed" />
+                    <TextBox x:Name="zeroMaxRandomTextBox" Grid.Row="16" Grid.Column="2" Text="16777215" IsEnabled="False" Focusable="False" />
 
-                    <Slider x:Name="zeroMaxRandomSlider" Grid.Row="22" Grid.Column="0" Value="16777215" Minimum="0" Maximum="16777215" IsSnapToTickEnabled="true" ValueChanged="ZeroMaxRandom_Changed" />
-                    <TextBox x:Name="zeroMaxRandomTextBox" Grid.Row="22" Grid.Column="2" Text="16777215" IsEnabled="False" Focusable="False" />
+					<Slider x:Name="minOffsetX_Slider" Grid.Row="22" Grid.Column="0" Grid.ColumnSpan="3" Value="-1"  Minimum="-10" Maximum="0" IsSnapToTickEnabled="true" ValueChanged="MinOffsetX_Changed" />
+                    <TextBox x:Name="minOffsetX_TextBox" Grid.Row="20" Grid.Column="2" Text="-1" IsEnabled="False" Focusable="False" />
 
-                    <Slider x:Name="minOffsetX_Slider" Grid.Row="26" Grid.Column="0" Value="-1"  Minimum="-10" Maximum="0" IsSnapToTickEnabled="true" ValueChanged="MinOffsetX_Changed" />
-                    <TextBox x:Name="minOffsetX_TextBox" Grid.Row="26" Grid.Column="2" Text="-1" IsEnabled="False" Focusable="False" />
+					<Slider x:Name="maxOffsetX_Slider" Grid.Row="26" Grid.Column="0" Grid.ColumnSpan="3" Value="1" Minimum="0" Maximum="10" IsSnapToTickEnabled="true" ValueChanged="MaxOffsetX_Changed" />
+                    <TextBox x:Name="maxOffsetX_TextBox" Grid.Row="24" Grid.Column="2" Text="1" IsEnabled="False" Focusable="False" />
 
-                    <Slider x:Name="maxOffsetX_Slider" Grid.Row="30" Grid.Column="0" Value="1" Minimum="0" Maximum="10" IsSnapToTickEnabled="true" ValueChanged="MaxOffsetX_Changed" />
-                    <TextBox x:Name="maxOffsetX_TextBox" Grid.Row="30" Grid.Column="2" Text="1" IsEnabled="False" Focusable="False" />
+					<Slider x:Name="minOffsetY_Slider" Grid.Row="30" Grid.Column="0" Grid.ColumnSpan="3" Value="-1"  Minimum="-10" Maximum="0" IsSnapToTickEnabled="true" ValueChanged="MinOffsetY_Changed" />
+					<TextBox x:Name="minOffsetY_TextBox" Grid.Row="28" Grid.Column="2" Grid.ColumnSpan="3" Text="-1" IsEnabled="False" Focusable="False" />
 
-                    <Slider x:Name="minOffsetY_Slider" Grid.Row="34" Grid.Column="0" Value="-1"  Minimum="-10" Maximum="0" IsSnapToTickEnabled="true" ValueChanged="MinOffsetY_Changed" />
-                    <TextBox x:Name="minOffsetY_TextBox" Grid.Row="34" Grid.Column="2" Text="-1" IsEnabled="False" Focusable="False" />
+					<Slider x:Name="maxOffsetY_Slider" Grid.Row="34" Grid.Column="0" Grid.ColumnSpan="3" Value="1" Minimum="0" Maximum="10" IsSnapToTickEnabled="true" ValueChanged="MaxOffsetY_Changed" />
+                    <TextBox x:Name="maxOffsetY_TextBox" Grid.Row="32" Grid.Column="2" Text="1" IsEnabled="False" Focusable="False" />
 
-                    <Slider x:Name="maxOffsetY_Slider" Grid.Row="38" Grid.Column="0" Value="1" Minimum="0" Maximum="10" IsSnapToTickEnabled="true" ValueChanged="MaxOffsetY_Changed" />
-                    <TextBox x:Name="maxOffsetY_TextBox" Grid.Row="38" Grid.Column="2" Text="1" IsEnabled="False" Focusable="False" />
-
-                    <Button x:Name="restoreDefaultsButton" Grid.Row="40" Grid.Column="0" Grid.ColumnSpan="3" Content="Restore Defaults" Click="RestoreDefaults_Click" />
-                    <Button x:Name="generateGradientButton" Grid.Row="42" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Gradient" IsEnabled="False" Click="GenerateGradient_Click" />
-					<Button x:Name="generateDistortedGradientButton" Grid.Row="44" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Distorted Gradient" IsEnabled="False" Click="GenerateDistortedGradient_Click" />
-					<Button x:Name="saveFileButton" Grid.Row="46" Grid.Column="0" Grid.ColumnSpan="3" Content="   Save File..." IsEnabled="False" Click="SaveFile_Click" />
+                    <Button x:Name="restoreDefaultsButton" Grid.Row="36" Grid.Column="0" Grid.ColumnSpan="3" Content="Restore Defaults" Click="RestoreDefaults_Click" />
+                    <Button x:Name="generateGradientButton" Grid.Row="38" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Gradient" IsEnabled="False" Click="GenerateGradient_Click" />
+					<Button x:Name="generateDistortedGradientButton" Grid.Row="40" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Distorted Gradient" IsEnabled="False" Click="GenerateDistortedGradient_Click" />
+					<Button x:Name="saveFileButton" Grid.Row="42" Grid.Column="0" Grid.ColumnSpan="3" Content="   Save File..." IsEnabled="False" Click="SaveFile_Click" />
                 </Grid>
             </StackPanel>
         </ScrollViewer>

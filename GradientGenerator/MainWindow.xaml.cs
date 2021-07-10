@@ -44,16 +44,14 @@ namespace GradientGenerator
 			saveFileButton.IsEnabled = false;
 		}
 
-		private void Width_Changed(object sender, RoutedPropertyChangedEventArgs<double> e)
+		private void Width_Changed(object sender, System.Windows.Input.TextCompositionEventArgs e)
 		{
-			if (widthTextBox == null) return;
-			widthTextBox.Text = widthSlider.Value.ToString();
+			e.Handled = !Int32.TryParse(e.Text, out int width);
 		}
 
-		private void Height_Changed(object sender, RoutedPropertyChangedEventArgs<double> e)
+		private void Height_Changed(object sender, System.Windows.Input.TextCompositionEventArgs e)
 		{
-			if (heightTextBox == null) return;
-			heightTextBox.Text = heightSlider.Value.ToString();
+			e.Handled = !Int32.TryParse(e.Text, out int height);
 		}
 
 		private void Seed_Changed(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -122,8 +120,8 @@ namespace GradientGenerator
 
 		private void RestoreDefaults_Click(object sender, RoutedEventArgs e)
 		{
-			widthSlider.Value = Constants.DEFAULT_WIDTH;
-			heightSlider.Value = Constants.DEFAULT_HEIGHT;
+			widthTextBox.Text = Constants.DEFAULT_WIDTH.ToString();
+			heightTextBox.Text = Constants.DEFAULT_HEIGHT.ToString();
 			seedSlider.Value = Constants.DEFAULT_SEED;
 			minRandomSlider.Value = Constants.DEFAULT_MIN_RANDOM;
 			maxRandomSlider.Value = Constants.DEFAULT_MAX_RANDOM;
@@ -136,8 +134,8 @@ namespace GradientGenerator
 
 		private void GenerateGradient_Click(object sender, RoutedEventArgs e)
 		{
-			int width = Convert.ToInt32(widthSlider.Value);
-			int height = Convert.ToInt32(heightSlider.Value);
+			int width = Int32.Parse(widthTextBox.Text);
+			int height = Int32.Parse(heightTextBox.Text);
 			int seed = Convert.ToInt32(seedSlider.Value);
 			int minRandom = Convert.ToInt32(minRandomSlider.Value);
 			int maxRandom = Convert.ToInt32(maxRandomSlider.Value);
@@ -173,8 +171,8 @@ namespace GradientGenerator
 
 		private void GenerateDistortedGradient_Click(object sender, RoutedEventArgs e)
 		{
-			int width = Convert.ToInt32(widthSlider.Value);
-			int height = Convert.ToInt32(heightSlider.Value);
+			int width = Int32.Parse(widthTextBox.Text);
+			int height = Int32.Parse(heightTextBox.Text);
 			int seed = Convert.ToInt32(seedSlider.Value);
 			int minRandom = Convert.ToInt32(minRandomSlider.Value);
 			int maxRandom = Convert.ToInt32(maxRandomSlider.Value);
