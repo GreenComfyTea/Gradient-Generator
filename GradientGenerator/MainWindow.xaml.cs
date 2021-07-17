@@ -25,13 +25,19 @@ namespace GradientGenerator
 		private void EnableUI()
 		{
 			generateGradientButton.IsEnabled = true;
+			generateGradientPatchesButton.IsEnabled = true;
 			generateDistortedGradientButton.IsEnabled = true;
+			generateDistortedSquareCentricButton.IsEnabled = true;
+			generateDistortedSquareCentricPatchesButton.IsEnabled = true;
 		}
 
 		private void DisableUI()
 		{
 			generateGradientButton.IsEnabled = false;
+			generateGradientPatchesButton.IsEnabled = false;
 			generateDistortedGradientButton.IsEnabled = false;
+			generateDistortedSquareCentricButton.IsEnabled = false;
+			generateDistortedSquareCentricPatchesButton.IsEnabled = false;
 		}
 
 		private void AllowSaving()
@@ -159,7 +165,43 @@ namespace GradientGenerator
 			int minOffsetY = -1, int maxOffsetY = 1)
 		{
 
-			gradientBitmap = Gradient.Generate(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY);
+			gradientBitmap = Generate.Gradient(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY);
+
+			Dispatcher.Invoke(() =>
+			{
+				EnableUI();
+				AllowSaving();
+				resultImage.Source = gradientBitmap;
+			});
+		}
+
+		private void GenerateGradientPatches_Click(object sender, RoutedEventArgs e)
+		{
+			int width = Int32.Parse(widthTextBox.Text);
+			int height = Int32.Parse(heightTextBox.Text);
+			int seed = Convert.ToInt32(seedSlider.Value);
+			int minRandom = Convert.ToInt32(minRandomSlider.Value);
+			int maxRandom = Convert.ToInt32(maxRandomSlider.Value);
+			int zeroMaxRandom = Convert.ToInt32(zeroMaxRandomSlider.Value);
+			int minOffsetX = Convert.ToInt32(minOffsetX_Slider.Value);
+			int maxOffsetX = Convert.ToInt32(maxOffsetX_Slider.Value);
+			int minOffsetY = Convert.ToInt32(minOffsetY_Slider.Value);
+			int maxOffsetY = Convert.ToInt32(maxOffsetY_Slider.Value);
+
+			DisableUI();
+			ForbidSaving();
+			Task.Run(() => GenerateGradientPatches(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY));
+		}
+
+		private void GenerateGradientPatches(
+			int width = 1920, int height = 1080,
+			int seed = 0,
+			int minRandom = -1000, int maxRandom = 1000,
+			int zeroMaxRandom = 16777215,
+			int minOffsetX = -1, int maxOffsetX = 1,
+			int minOffsetY = -1, int maxOffsetY = 1)
+		{
+			gradientBitmap = Generate.GradientPatches(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY);
 
 			Dispatcher.Invoke(() =>
 			{
@@ -195,7 +237,7 @@ namespace GradientGenerator
 			int minOffsetX = -1, int maxOffsetX = 1,
 			int minOffsetY = -1, int maxOffsetY = 1)
 		{
-			gradientBitmap = Gradient.GenerateDistortedParallel(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY);
+			gradientBitmap = Generate.DistortedGradient(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY);
 
 			Dispatcher.Invoke(() =>
 			{
@@ -205,12 +247,83 @@ namespace GradientGenerator
 			});
 		}
 
-			private void SaveFile_Click(object sender, RoutedEventArgs e)
+		private void GenerateDistortedSquareCentric_Click(object sender, RoutedEventArgs e)
+		{
+			int width = Int32.Parse(widthTextBox.Text);
+			int height = Int32.Parse(heightTextBox.Text);
+			int seed = Convert.ToInt32(seedSlider.Value);
+			int minRandom = Convert.ToInt32(minRandomSlider.Value);
+			int maxRandom = Convert.ToInt32(maxRandomSlider.Value);
+			int zeroMaxRandom = Convert.ToInt32(zeroMaxRandomSlider.Value);
+			int minOffsetX = Convert.ToInt32(minOffsetX_Slider.Value);
+			int maxOffsetX = Convert.ToInt32(maxOffsetX_Slider.Value);
+			int minOffsetY = Convert.ToInt32(minOffsetY_Slider.Value);
+			int maxOffsetY = Convert.ToInt32(maxOffsetY_Slider.Value);
+
+			DisableUI();
+			ForbidSaving();
+			Task.Run(() => GenerateDistortedSquareCentric(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY));
+		}
+
+		private void GenerateDistortedSquareCentric(
+			int width = 1920, int height = 1080,
+			int seed = 0,
+			int minRandom = -1000, int maxRandom = 1000,
+			int zeroMaxRandom = 16777215,
+			int minOffsetX = -1, int maxOffsetX = 1,
+			int minOffsetY = -1, int maxOffsetY = 1)
+		{
+			gradientBitmap = Generate.DistortedSquareCentric(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY);
+
+			Dispatcher.Invoke(() =>
+			{
+				EnableUI();
+				AllowSaving();
+				resultImage.Source = gradientBitmap;
+			});
+		}
+
+		private void GenerateDistortedSquareCentricPatches_Click(object sender, RoutedEventArgs e)
+		{
+			int width = Int32.Parse(widthTextBox.Text);
+			int height = Int32.Parse(heightTextBox.Text);
+			int seed = Convert.ToInt32(seedSlider.Value);
+			int minRandom = Convert.ToInt32(minRandomSlider.Value);
+			int maxRandom = Convert.ToInt32(maxRandomSlider.Value);
+			int zeroMaxRandom = Convert.ToInt32(zeroMaxRandomSlider.Value);
+			int minOffsetX = Convert.ToInt32(minOffsetX_Slider.Value);
+			int maxOffsetX = Convert.ToInt32(maxOffsetX_Slider.Value);
+			int minOffsetY = Convert.ToInt32(minOffsetY_Slider.Value);
+			int maxOffsetY = Convert.ToInt32(maxOffsetY_Slider.Value);
+
+			DisableUI();
+			ForbidSaving();
+			Task.Run(() => GenerateDistortedSquareCentricPatches(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY));
+		}
+
+		private void GenerateDistortedSquareCentricPatches(
+			int width = 1920, int height = 1080,
+			int seed = 0,
+			int minRandom = -1000, int maxRandom = 1000,
+			int zeroMaxRandom = 16777215,
+			int minOffsetX = -1, int maxOffsetX = 1,
+			int minOffsetY = -1, int maxOffsetY = 1)
+		{
+			gradientBitmap = Generate.DistortedSquareCentricPatches(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY);
+
+			Dispatcher.Invoke(() =>
+			{
+				EnableUI();
+				AllowSaving();
+				resultImage.Source = gradientBitmap;
+			});
+		}
+
+		private void SaveFile_Click(object sender, RoutedEventArgs e)
 		{
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
 			saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 			saveFileDialog.Filter = "Img Files|*.jpg;*.jpeg;*.png;*.bmp";
-
 
 			saveFileDialog.FileName = string.Format("Gradient_{0}.png", DateTime.Now.ToString().Replace(':', '-').Replace(' ', '_'));
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GradientGenerator"
         mc:Ignorable="d"
-        Title="Gradient Generator v1.0 by GreenComfyTea"
+        Title="Gradient Generator v1.1 by GreenComfyTea"
 		Width="1280" Height="720"
 		MinWidth="640" MinHeight="480"
         Background="#212121"
@@ -48,19 +48,13 @@
                         <RowDefinition Height="5"/>
                         <RowDefinition />
                         <RowDefinition Height="5"/>
-                        <RowDefinition />
+						<RowDefinition />
+						<RowDefinition Height="5"/>
+						<RowDefinition />
                         <RowDefinition Height="5"/>
-                        <RowDefinition />
-                        <RowDefinition Height="5" />
-                        <RowDefinition />
-                        <RowDefinition Height="5"/>
-                        <RowDefinition />
-                        <RowDefinition Height="5"/>
-                        <RowDefinition />
-                        <RowDefinition Height="5"/>
-                        <RowDefinition />
-                        <RowDefinition Height="5"/>
-                        <RowDefinition />
+						<RowDefinition />
+						<RowDefinition Height="5"/>
+						<RowDefinition />
 						<RowDefinition Height="5"/>
 						<RowDefinition />
 						<RowDefinition Height="5"/>
@@ -69,6 +63,12 @@
                         <RowDefinition />
                         <RowDefinition Height="5"/>
                         <RowDefinition />
+						<RowDefinition Height="5"/>
+						<RowDefinition />
+						<RowDefinition Height="5"/>
+						<RowDefinition />
+						<RowDefinition Height="5"/>
+                        <RowDefinition />
                         <RowDefinition Height="5"/>
                         <RowDefinition />
 						<RowDefinition Height="5"/>
@@ -76,6 +76,8 @@
 						<RowDefinition Height="5"/>
                         <RowDefinition />
                         <RowDefinition Height="5"/>
+						<RowDefinition />
+						<RowDefinition Height="5"/>
 						<RowDefinition />
 						<RowDefinition Height="5"/>
 						<RowDefinition />
@@ -130,8 +132,12 @@
 
                     <Button x:Name="restoreDefaultsButton" Grid.Row="36" Grid.Column="0" Grid.ColumnSpan="3" Content="Restore Defaults" Click="RestoreDefaults_Click" />
                     <Button x:Name="generateGradientButton" Grid.Row="38" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Gradient" IsEnabled="False" Click="GenerateGradient_Click" />
-					<Button x:Name="generateDistortedGradientButton" Grid.Row="40" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Distorted Gradient" IsEnabled="False" Click="GenerateDistortedGradient_Click" />
-					<Button x:Name="saveFileButton" Grid.Row="42" Grid.Column="0" Grid.ColumnSpan="3" Content="   Save File..." IsEnabled="False" Click="SaveFile_Click" />
+					<Button x:Name="generateGradientPatchesButton" Grid.Row="40" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Gradient Patches" IsEnabled="False" Click="GenerateGradientPatches_Click" />
+					<Button x:Name="generateDistortedGradientButton" Grid.Row="42" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Distorted Gradient" IsEnabled="False" Click="GenerateDistortedGradient_Click" />
+					<Button x:Name="generateDistortedSquareCentricButton" Grid.Row="44" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Distorted Square-Centric" IsEnabled="False" Click="GenerateDistortedSquareCentric_Click" />
+					<Button x:Name="generateDistortedSquareCentricPatchesButton" Grid.Row="46" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Distorted Square-Centric Patches" IsEnabled="False" Click="GenerateDistortedSquareCentricPatches_Click" />
+
+					<Button x:Name="saveFileButton" Grid.Row="48" Grid.Column="0" Grid.ColumnSpan="3" Content="   Save File..." IsEnabled="False" Click="SaveFile_Click" />
                 </Grid>
             </StackPanel>
         </ScrollViewer>

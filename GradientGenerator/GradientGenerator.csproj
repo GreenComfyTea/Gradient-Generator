@@ -12,6 +12,8 @@
     <PackageIconUrl />
     <RepositoryUrl>https://github.com/GreenComfyTea/Gradient-Generator</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Version>1.1.0</Version>
+    <AssemblyVersion>1.11.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
