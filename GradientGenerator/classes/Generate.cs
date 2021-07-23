@@ -149,7 +149,8 @@ namespace GradientGenerator
 			int minRandom = -1000, int maxRandom = 1000,
 			int zeroMaxRandom = 16777215,
 			int minOffsetX = -1, int maxOffsetX = 1,
-			int minOffsetY = -1, int maxOffsetY = 1)
+			int minOffsetY = -1, int maxOffsetY = 1,
+			int threadCount = 8)
 		{
 			int[,] gradient = new int[height, width];
 
@@ -157,7 +158,7 @@ namespace GradientGenerator
 			if (seed == 0) random = new Random();
 			else random = new Random(seed);
 
-			int threadCount = Environment.ProcessorCount;
+			
 			// <x, y, newColorInt>
 			Queue<Tuple<int, int, int>>[] processingQueues = new Queue<Tuple<int, int, int>>[threadCount];
 			for(int i = 0; i < processingQueues.Length; i++)
@@ -244,11 +245,12 @@ namespace GradientGenerator
 			int minRandom = -1000, int maxRandom = 1000,
 			int zeroMaxRandom = 16777215,
 			int minOffsetX = -1, int maxOffsetX = 1,
-			int minOffsetY = -1, int maxOffsetY = 1)
+			int minOffsetY = -1, int maxOffsetY = 1,
+			int threadCount = 8)
 		{
 			int[,] gradient = new int[height, width];
 
-			int threadCount = Environment.ProcessorCount;
+			
 
 			Random random;
 			if (seed == 0) random = new Random();

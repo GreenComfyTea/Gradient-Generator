@@ -19,6 +19,9 @@ namespace GradientGenerator
 		{
 			InitializeComponent();
 
+			threadCount_Slider.Maximum = Environment.ProcessorCount;
+			threadCount_Slider.Value = Environment.ProcessorCount;
+
 			EnableUI();
 		}
 
@@ -124,6 +127,12 @@ namespace GradientGenerator
 			maxOffsetY_TextBox.Text = maxOffsetY_Slider.Value.ToString();
 		}
 
+		private void ThreadCount_Changed(object sender, RoutedPropertyChangedEventArgs<double> e)
+		{
+			if (threadCount_TextBox == null) return;
+			threadCount_TextBox.Text = threadCount_Slider.Value.ToString();
+		}
+
 		private void RestoreDefaults_Click(object sender, RoutedEventArgs e)
 		{
 			widthTextBox.Text = Constants.DEFAULT_WIDTH.ToString();
@@ -187,10 +196,11 @@ namespace GradientGenerator
 			int maxOffsetX = Convert.ToInt32(maxOffsetX_Slider.Value);
 			int minOffsetY = Convert.ToInt32(minOffsetY_Slider.Value);
 			int maxOffsetY = Convert.ToInt32(maxOffsetY_Slider.Value);
+			int threadCount = Convert.ToInt32(threadCount_Slider.Value);
 
 			DisableUI();
 			ForbidSaving();
-			Task.Run(() => GenerateGradientPatches(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY));
+			Task.Run(() => GenerateGradientPatches(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY, threadCount));
 		}
 
 		private void GenerateGradientPatches(
@@ -199,9 +209,10 @@ namespace GradientGenerator
 			int minRandom = -1000, int maxRandom = 1000,
 			int zeroMaxRandom = 16777215,
 			int minOffsetX = -1, int maxOffsetX = 1,
-			int minOffsetY = -1, int maxOffsetY = 1)
+			int minOffsetY = -1, int maxOffsetY = 1,
+			int threadCount = 8)
 		{
-			gradientBitmap = Generate.GradientPatches(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY);
+			gradientBitmap = Generate.GradientPatches(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY, threadCount);
 
 			Dispatcher.Invoke(() =>
 			{
@@ -295,10 +306,11 @@ namespace GradientGenerator
 			int maxOffsetX = Convert.ToInt32(maxOffsetX_Slider.Value);
 			int minOffsetY = Convert.ToInt32(minOffsetY_Slider.Value);
 			int maxOffsetY = Convert.ToInt32(maxOffsetY_Slider.Value);
+			int threadCount = Convert.ToInt32(threadCount_Slider.Value);
 
 			DisableUI();
 			ForbidSaving();
-			Task.Run(() => GenerateDistortedSquareCentricPatches(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY));
+			Task.Run(() => GenerateDistortedSquareCentricPatches(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY, threadCount));
 		}
 
 		private void GenerateDistortedSquareCentricPatches(
@@ -307,9 +319,9 @@ namespace GradientGenerator
 			int minRandom = -1000, int maxRandom = 1000,
 			int zeroMaxRandom = 16777215,
 			int minOffsetX = -1, int maxOffsetX = 1,
-			int minOffsetY = -1, int maxOffsetY = 1)
+			int minOffsetY = -1, int maxOffsetY = 1, int threadCount  = 8)
 		{
-			gradientBitmap = Generate.DistortedSquareCentricPatches(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY);
+			gradientBitmap = Generate.DistortedSquareCentricPatches(width, height, seed, minRandom, maxRandom, zeroMaxRandom, minOffsetX, maxOffsetX, minOffsetY, maxOffsetY, threadCount);
 
 			Dispatcher.Invoke(() =>
 			{

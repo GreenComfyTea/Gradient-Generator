@@ -84,6 +84,10 @@
 						<RowDefinition Height="5"/>
 						<RowDefinition />
 						<RowDefinition Height="5"/>
+						<RowDefinition />
+						<RowDefinition Height="5"/>
+						<RowDefinition />
+						<RowDefinition Height="5"/>
 					</Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
@@ -102,6 +106,7 @@
                     <TextBlock Text="Max Offset X:" Grid.Row="24" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
                     <TextBlock Text="Min Offset Y:" Grid.Row="28" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
                     <TextBlock Text="Max Offset Y:" Grid.Row="32" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
+					<TextBlock Text="Thread Count:" Grid.Row="36" Grid.Column="0" Grid.ColumnSpan="3" Foreground="#e7e7e7"/>
 
 					<TextBox x:Name="widthTextBox" Grid.Row="0" Grid.Column="2" Text="1920" IsEnabled="True" PreviewTextInput="Width_Changed" />
 					<TextBox x:Name="heightTextBox" Grid.Row="2" Grid.Column="2" Text="1080" IsEnabled="True" PreviewTextInput="Height_Changed" />
@@ -130,14 +135,17 @@
 					<Slider x:Name="maxOffsetY_Slider" Grid.Row="34" Grid.Column="0" Grid.ColumnSpan="3" Value="1" Minimum="0" Maximum="10" IsSnapToTickEnabled="true" ValueChanged="MaxOffsetY_Changed" />
                     <TextBox x:Name="maxOffsetY_TextBox" Grid.Row="32" Grid.Column="2" Text="1" IsEnabled="False" Focusable="False" />
 
-                    <Button x:Name="restoreDefaultsButton" Grid.Row="36" Grid.Column="0" Grid.ColumnSpan="3" Content="Restore Defaults" Click="RestoreDefaults_Click" />
-                    <Button x:Name="generateGradientButton" Grid.Row="38" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Gradient" IsEnabled="False" Click="GenerateGradient_Click" />
-					<Button x:Name="generateGradientPatchesButton" Grid.Row="40" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Gradient Patches" IsEnabled="False" Click="GenerateGradientPatches_Click" />
-					<Button x:Name="generateDistortedGradientButton" Grid.Row="42" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Distorted Gradient" IsEnabled="False" Click="GenerateDistortedGradient_Click" />
-					<Button x:Name="generateDistortedSquareCentricButton" Grid.Row="44" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Distorted Square-Centric" IsEnabled="False" Click="GenerateDistortedSquareCentric_Click" />
-					<Button x:Name="generateDistortedSquareCentricPatchesButton" Grid.Row="46" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Distorted Square-Centric Patches" IsEnabled="False" Click="GenerateDistortedSquareCentricPatches_Click" />
+					<Slider x:Name="threadCount_Slider" Grid.Row="38" Grid.Column="0" Grid.ColumnSpan="3" Value="8" Minimum="1" Maximum="64" IsSnapToTickEnabled="true" ValueChanged="ThreadCount_Changed" />
+					<TextBox x:Name="threadCount_TextBox" Grid.Row="36" Grid.Column="2" Text="8" IsEnabled="False" Focusable="False" />
 
-					<Button x:Name="saveFileButton" Grid.Row="48" Grid.Column="0" Grid.ColumnSpan="3" Content="   Save File..." IsEnabled="False" Click="SaveFile_Click" />
+					<Button x:Name="restoreDefaultsButton" Grid.Row="40" Grid.Column="0" Grid.ColumnSpan="3" Content="Restore Defaults" Click="RestoreDefaults_Click" />
+                    <Button x:Name="generateGradientButton" Grid.Row="42" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Gradient" IsEnabled="False" Click="GenerateGradient_Click" />
+					<Button x:Name="generateGradientPatchesButton" Grid.Row="44" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Gradient Patches" IsEnabled="False" Click="GenerateGradientPatches_Click" />
+					<Button x:Name="generateDistortedGradientButton" Grid.Row="46" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Distorted Gradient" IsEnabled="False" Click="GenerateDistortedGradient_Click" />
+					<Button x:Name="generateDistortedSquareCentricButton" Grid.Row="48" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Distorted Square-Centric" IsEnabled="False" Click="GenerateDistortedSquareCentric_Click" />
+					<Button x:Name="generateDistortedSquareCentricPatchesButton" Grid.Row="50" Grid.Column="0" Grid.ColumnSpan="3" Content="Generate Distorted Square-Centric Patches" IsEnabled="False" Click="GenerateDistortedSquareCentricPatches_Click" />
+
+					<Button x:Name="saveFileButton" Grid.Row="52" Grid.Column="0" Grid.ColumnSpan="3" Content="   Save File..." IsEnabled="False" Click="SaveFile_Click" />
                 </Grid>
             </StackPanel>
         </ScrollViewer>
