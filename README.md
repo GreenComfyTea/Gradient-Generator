@@ -18,7 +18,7 @@
 	<a href="https://github.com/greencomfytea/gradient-generator/pulls">
 		<img alt="Pull Requests Closed" src="https://custom-icon-badges.demolab.com/github/issues-pr-closed/greencomfytea/gradient-generator?logo=git-pull-request-closed" />
 	</a>
-<br>
+	<br>
 	<a href="https://github.com/greencomfytea/gradient-generator/blob/main/LICENSE">
 		<img alt="License" src="https://custom-icon-badges.demolab.com/github/license/greencomfytea/gradient-generator?logo=law" />
 	</a>
@@ -34,17 +34,17 @@
 	<a href="">
 		<img alt="Maintenance" src="https://custom-icon-badges.demolab.com/maintenance/no/2023?logo=tools" />
 	</a>
-<br>
+	<br>
 	<a href="https://github.com/greencomfytea/gradient-generator/commits/main">
 		<img alt="Last Commit" src="https://custom-icon-badges.demolab.com/github/last-commit/greencomfytea/gradient-generator?logo=git-commit" />
 	</a>
 	<a href="https://github.com/greencomfytea/gradient-generator/commits/main">
 		<img alt="Commits Since" src="https://custom-icon-badges.demolab.com/github/commits-since/greencomfytea/gradient-generator/latest?logo=git-commit" />
 	</a>
-<a href="https://github.com/greencomfytea/gradient-generator/commits/main">
+	<a href="https://github.com/greencomfytea/gradient-generator/commits/main">
 		<img alt="Commits" src="https://custom-icon-badges.demolab.com/github/commit-activity/t/greencomfytea/gradient-generator?logo=git-commit" />
 	</a>
-<br>
+	<br>
 	<a href="https://github.com/greencomfytea/gradient-generator/graphs/commit-activity">
 		<img alt="Commit Activity (Year)" src="https://custom-icon-badges.demolab.com/github/commit-activity/y/greencomfytea/gradient-generator?logo=pulse" />
 	</a>
@@ -54,7 +54,7 @@
 	<a href="https://github.com/greencomfytea/gradient-generator/graphs/commit-activity">
 		<img alt="Commit Activity (Week)" src="https://custom-icon-badges.demolab.com/github/commit-activity/w/greencomfytea/gradient-generator?logo=pulse" />
 	</a>
-<br>
+	<br>
 	<a href="">
 		<img alt="Repo Size" src="https://custom-icon-badges.demolab.com/github/repo-size/greencomfytea/gradient-generator?logo=database" />
 	</a>
@@ -76,7 +76,7 @@
 	<a href="https://github.com/greencomfytea/gradient-generator/graphs/traffic">
 		<img alt="Hits" src="https://custom-icon-badges.demolab.com/endpoint?url=https://hits.dwyl.com/greencomfytea/gradient-generator.json?color=blue&logo=eye" />
 	</a>
-<br>
+	<br>
 	<a href="https://github.com/greencomfytea?tab=followers">
 		<img alt="Followers" src="https://custom-icon-badges.demolab.com/github/followers/greencomfytea?logo=people" />
 	</a>
@@ -86,7 +86,7 @@
 	<a href="https://www.twitch.tv/greencomfytea">
 		<img alt="Twitch" src="https://img.shields.io/twitch/status/greencomfytea?logo=twitch" />
 	</a>
-<br>
+	<br>
 	<a href="https://github.com/greencomfytea">
 		<img alt="Author" src="https://custom-icon-badges.demolab.com/badge/author-GreenComfyTea-green?logo=person" />
 	</a>
