@@ -1,4 +1,3 @@
-
 <p align="center">
 	<h2 align="center"><b>Gradient Generator</b></h2>
 	<p align="center">Just random project.</p>
