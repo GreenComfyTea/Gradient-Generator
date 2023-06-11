@@ -29,7 +29,7 @@
 		<img alt="Release Date" src="https://custom-icon-badges.demolab.com/github/release-date/greencomfytea/gradient-generator?logo=clock" />
 	</a>
 	<a href="">
-		<img alt="Platform" src="https://custom-icon-badges.demolab.com/badge/platform-win-blue?logo=device-desktop" />
+		<img alt="Platform" src="https://custom-icon-badges.demolab.com/badge/platform-win32 | win64 | arm64-blue?logo=device-desktop" />
 	</a>
 	<a href="">
 		<img alt="Maintenance" src="https://custom-icon-badges.demolab.com/maintenance/no/2023?logo=tools" />
