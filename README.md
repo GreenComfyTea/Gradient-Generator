@@ -36,28 +36,6 @@
 	</a>
 	<br>
 	<br>
-	<a href="">
-		<img alt="Repo Size" src="https://custom-icon-badges.demolab.com/github/repo-size/greencomfytea/gradient-generator?logo=database" />
-	</a>
-	<a href="">
-		<img alt="Goto Counter" src="https://custom-icon-badges.demolab.com/github/search/greencomfytea/gradient-generator/goto?logo=git-compare" />
-	</a>
-	<a href="https://github.com/sponsors/greencomfytea">
-		<img alt="Sponsors" src="https://custom-icon-badges.demolab.com/github/sponsors/greencomfytea?logo=heart" />
-	</a>
-	<a href="https://github.com/GreenComfyTea/gradient-generator/watchers">
-		<img alt="Watchers" src="https://custom-icon-badges.demolab.com/github/watchers/greencomfytea/gradient-generator?logo=eye" />
-	</a>
-	<a href="https://github.com/greencomfytea/gradient-generator/forks">
-		<img alt="Forks" src="https://custom-icon-badges.demolab.com/github/forks/greencomfytea/gradient-generator?logo=repo-forked" />
-	</a>
-	<a href="https://github.com/greencomfytea/gradient-generator/stargazers">
-		<img alt="Stars" src="https://custom-icon-badges.demolab.com/github/stars/greencomfytea/gradient-generator?logo=star" />
-	</a>
-	<a href="https://github.com/greencomfytea/gradient-generator/graphs/traffic">
-		<img alt="Hits" src="https://custom-icon-badges.demolab.com/endpoint?url=https://hits.dwyl.com/greencomfytea/gradient-generator.json?color=blue&logo=eye" />
-	</a>
-	<br>
 	<a href="https://github.com/greencomfytea/gradient-generator/commits/main">
 		<img alt="Last Commit" src="https://custom-icon-badges.demolab.com/github/last-commit/greencomfytea/gradient-generator?logo=git-commit" />
 	</a>
@@ -76,6 +54,33 @@
 	</a>
 	<a href="https://github.com/greencomfytea/gradient-generator/graphs/commit-activity">
 		<img alt="Commit Activity (Week)" src="https://custom-icon-badges.demolab.com/github/commit-activity/w/greencomfytea/gradient-generator?logo=pulse" />
+	</a>
+	<br>
+	<br>
+	<a href="">
+		<img alt="Repo Size" src="https://custom-icon-badges.demolab.com/github/repo-size/greencomfytea/gradient-generator?logo=database" />
+	</a>
+	<a href="">
+		<img alt="Line Count" src="https://sloc.xyz/github/greencomfytea/gradient-generator" />
+	</a>
+	<a href="">
+		<img alt="Goto Counter" src="https://custom-icon-badges.demolab.com/github/search/greencomfytea/gradient-generator/goto?logo=git-compare" />
+	</a>
+	<br>
+	<a href="https://github.com/sponsors/greencomfytea">
+		<img alt="Sponsors" src="https://custom-icon-badges.demolab.com/github/sponsors/greencomfytea?logo=heart" />
+	</a>
+	<a href="https://github.com/GreenComfyTea/gradient-generator/watchers">
+		<img alt="Watchers" src="https://custom-icon-badges.demolab.com/github/watchers/greencomfytea/gradient-generator?logo=eye" />
+	</a>
+	<a href="https://github.com/greencomfytea/gradient-generator/forks">
+		<img alt="Forks" src="https://custom-icon-badges.demolab.com/github/forks/greencomfytea/gradient-generator?logo=repo-forked" />
+	</a>
+	<a href="https://github.com/greencomfytea/gradient-generator/stargazers">
+		<img alt="Stars" src="https://custom-icon-badges.demolab.com/github/stars/greencomfytea/gradient-generator?logo=star" />
+	</a>
+	<a href="https://github.com/greencomfytea/gradient-generator/graphs/traffic">
+		<img alt="Hits" src="https://custom-icon-badges.demolab.com/endpoint?url=https://hits.dwyl.com/greencomfytea/gradient-generator.json?color=blue&logo=eye" />
 	</a>
 	<br>
 	<br>
