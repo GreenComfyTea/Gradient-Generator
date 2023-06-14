@@ -37,13 +37,13 @@
 	<br>
 	<br>
 	<a href="https://github.com/greencomfytea/gradient-generator/commits/main">
+		<img alt="Commits" src="https://custom-icon-badges.demolab.com/github/commit-activity/t/greencomfytea/gradient-generator?logo=git-commit" />
+	</a>
+	<a href="https://github.com/greencomfytea/gradient-generator/commits/main">
 		<img alt="Last Commit" src="https://custom-icon-badges.demolab.com/github/last-commit/greencomfytea/gradient-generator?logo=git-commit" />
 	</a>
 	<a href="https://github.com/greencomfytea/gradient-generator/commits/main">
 		<img alt="Commits Since" src="https://custom-icon-badges.demolab.com/github/commits-since/greencomfytea/gradient-generator/latest?logo=git-commit" />
-	</a>
-	<a href="https://github.com/greencomfytea/gradient-generator/commits/main">
-		<img alt="Commits" src="https://custom-icon-badges.demolab.com/github/commit-activity/t/greencomfytea/gradient-generator?logo=git-commit" />
 	</a>
 	<br>
 	<a href="https://github.com/greencomfytea/gradient-generator/graphs/commit-activity">
